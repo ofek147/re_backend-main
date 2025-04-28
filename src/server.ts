@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose"; // Import Mongoose
 import projectRoutes from "./routes/projects";
 import adminRoutes from "./routes/admin";
+import leadRoutes from "./routes/leads";
 
 const dotenv = require("dotenv");
 // Load environment variables
@@ -33,8 +34,9 @@ mongoose
   });
 
 // Routes
-app.use(projectRoutes); 
+app.use(projectRoutes);
 app.use(adminRoutes);
+app.use(leadRoutes);
 
 // Health check route
 app.get("/health", (req, res) => {
@@ -57,3 +59,4 @@ app.use(
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
