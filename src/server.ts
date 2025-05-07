@@ -78,7 +78,7 @@ const PORT = process.env.PORT || 9999; // פורט ברירת מחדל אם לא
 const HTTP_PORT = 80; // פורט עבור הפניית HTTP ל-HTTPS
 const MONGODB_URI = process.env.MONGODB_URI;
 
-const DOMAIN = "test-ben-project.netlify.app"; // שם הדומיין שלך
+const DOMAIN = "https://re-backend.xyz"; // שם הדומיין שלך
 const CERT_PATH = `/etc/letsencrypt/live/${DOMAIN}/fullchain.pem`; // נתיב לתעודה
 const KEY_PATH = `/etc/letsencrypt/live/${DOMAIN}/privkey.pem`; // נתיב למפתח הפרטי
 
