@@ -88,7 +88,13 @@ if (!MONGODB_URI) {
 }
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://re-backend.xyz", // אפשר רק מהדומיין הזה
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // אפשר את השיטות האלה
+    allowedHeaders: ["Content-Type", "Authorization"], // אפשר את הכותרות האלה
+  })
+);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
