@@ -142,16 +142,6 @@ httpsServer.listen(3333, () => {
   // האזנה על פורט 3333 עבור HTTPS (מאחורי Nginx)
   console.log(`HTTPS server is running on port 3333`);
 });
-// --- הפניית HTTP ל-HTTPS ---
-const httpApp = express();
-httpApp.get("*", (req, res) => {
-  res.redirect(`https://${req.headers.host}${req.url}`);
-});
-
-httpApp.listen(HTTP_PORT, () => {
-  // האזנה על פורט 80 עבור הפניה
-  console.log(`HTTP server is running on port ${HTTP_PORT} for redirection`);
-});
 
 // אם את כבר לא צריכה להאזין על הפורט הישן (9999), את יכולה להסיר את השורה הבאה:
 // app.listen(PORT, () => {
