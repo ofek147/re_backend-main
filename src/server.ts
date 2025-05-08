@@ -138,11 +138,10 @@ const httpsOptions = {
 
 const httpsServer = https.createServer(httpsOptions, app);
 
-httpsServer.listen(443, () => {
-  // האזנה על פורט 443 עבור HTTPS
-  console.log(`HTTPS server is running on port 443`);
+httpsServer.listen(3333, () => {
+  // האזנה על פורט 3333 עבור HTTPS (מאחורי Nginx)
+  console.log(`HTTPS server is running on port 3333`);
 });
-
 // --- הפניית HTTP ל-HTTPS ---
 const httpApp = express();
 httpApp.get("*", (req, res) => {
