@@ -26,7 +26,7 @@ if (!MONGODB_URI) {
 // Middleware
 app.use(
   cors({
-    origin: "*", // אפשר רק מהדומיין הזה
+    origin: "https://re-backend.xyz", // אפשר רק מהדומיין הזה
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // אפשר את השיטות האלה
     allowedHeaders: ["Content-Type", "Authorization"], // אפשר את הכותרות האלה
   })
