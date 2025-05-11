@@ -74,9 +74,8 @@ const httpsOptions = {
 
 const httpsServer = https.createServer(httpsOptions, app);
 
-httpsServer.listen(443, () => {
-  // האזנה על פורט 443 עבור HTTPS (מאחורי Nginx)
-  console.log(`HTTPS server is running on port 443`);
+httpsServer.listen(process.env.PORT, () => {
+  console.log(`HTTPS server is running on port ${process.env.PORT}`);
 });
 
 // import express from "express";
