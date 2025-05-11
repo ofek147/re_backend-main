@@ -33,7 +33,7 @@ export const requireAuth = async (
     // Verify token
     const decoded = jwt.verify(
       token,
-      process.env.JWT_SECRET || "ofek132123123"
+      process.env.JWT_SECRET
     ) as TokenPayload;
 
     // Find admin

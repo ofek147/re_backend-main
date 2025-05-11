@@ -16,7 +16,7 @@ export const verifyToken = async (req: Request, res: Response) => {
     // Decode and verify the token
     const decoded = jwt.verify(
       token,
-      process.env.JWT_SECRET || "ofek132123123"
+      process.env.JWT_SECRET
     ) as { id: string };
 
     // Fetch user to confirm still exists
@@ -28,7 +28,7 @@ export const verifyToken = async (req: Request, res: Response) => {
     // Re-sign token with a fresh expiration
     const newToken = jwt.sign(
       { id: admin._id },
-      process.env.JWT_SECRET || "ofek132123123",
+      process.env.JWT_SECRET,
       { expiresIn: "1d" }
     );
 
@@ -74,7 +74,7 @@ export const login = async (req: Request, res: Response) => {
     // Create a token (adjust secret/expiry as needed)
     const token = jwt.sign(
       { id: admin._id },
-      process.env.JWT_SECRET || "ofek132123123",
+      process.env.JWT_SECRET,
       { expiresIn: "1d" }
     );
 

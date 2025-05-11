@@ -9,7 +9,7 @@ import { requireAuth } from "../middleware/auth";
 
 const router = Router();
 
-router.get("/leads", getAllLeads);
+router.get("/leads", requireAuth, getAllLeads);
 router.post("/leads", createLead);
 router.put("/leads/:id", requireAuth, updateLead);
 router.delete("/leads/:id", requireAuth, deleteLead);
