@@ -26,9 +26,9 @@ if (!MONGODB_URI) {
 // Middleware
 app.use(
   cors({
-    origin: "https://re-backend.xyz", // אפשר רק מהדומיין הזה
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // אפשר את השיטות האלה
-    allowedHeaders: ["Content-Type", "Authorization"], // אפשר את הכותרות האלה
+    origin: "https://test-ben-project.netlify.app", 
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], 
+    allowedHeaders: ["Content-Type", "Authorization"], 
   })
 );
 app.use(bodyParser.json());
