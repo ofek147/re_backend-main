@@ -72,12 +72,12 @@ const httpsOptions = {
   cert: fs.readFileSync(CERT_PATH), // קריאת התעודה
 };
 
-const httpsServer = https.createServer(httpsOptions, app);
+// const httpsServer = https.createServer(httpsOptions, app);
 
-httpsServer.listen(443, () => {
-  // האזנה על פורט 443 עבור HTTPS (מאחורי Nginx)
-  console.log(`HTTPS server is running on port 443`);
-});
+// httpsServer.listen(443, () => {
+//   // האזנה על פורט 443 עבור HTTPS (מאחורי Nginx)
+//   console.log(`HTTPS server is running on port 443`);
+// });
 
 // import express from "express";
 // import cors from "cors";
