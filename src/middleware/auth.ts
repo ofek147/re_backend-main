@@ -16,14 +16,14 @@ declare global {
 
 const SECRET_API_TOKEN = process.env.SECRET_API_TOKEN;
 const JWT_SECRET = process.env.JWT_SECRET;
-
+console.log("SECRET_API_TOKEN:", SECRET_API_TOKEN);
 export const requireAuth = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-
   const apiKey = req.headers["x-api-key"];
+  console.log("API Key Received:", apiKey);
   if (apiKey === SECRET_API_TOKEN) {
     return next();
   }
