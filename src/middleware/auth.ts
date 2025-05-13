@@ -14,7 +14,7 @@ declare global {
   }
 }
 
-const SECRET_API_KEY = process.env.SECRET_API_KEY;
+const SECRET_API_TOKEN = process.env.SECRET_API_TOKEN;
 const JWT_SECRET = process.env.JWT_SECRET;
 
 export const requireAuth = async (
@@ -26,8 +26,8 @@ export const requireAuth = async (
 
   const apiKey = req.headers["x-api-key"];
   console.log("ערך של x-api-key:", apiKey);
-  console.log("ערך מצופה של SECRET_API_KEY:", SECRET_API_KEY);
-  if (apiKey === SECRET_API_KEY) {
+  console.log("ערך מצופה של SECRET_API_KEY:", SECRET_API_TOKEN);
+  if (apiKey === SECRET_API_TOKEN) {
     return next();
   }
 
