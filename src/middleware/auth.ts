@@ -16,19 +16,22 @@ declare global {
 
 const SECRET_API_TOKEN = process.env.SECRET_API_TOKEN;
 const JWT_SECRET = process.env.JWT_SECRET;
-console.log("SECRET_API_TOKEN:", SECRET_API_TOKEN);
 export const requireAuth = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   const apiKey = req.headers["x-api-key"];
-  console.log("API Key Received:", apiKey);
-  if (apiKey === SECRET_API_TOKEN) {
+  const authHeader = req.headers.authorization;
+  const isProtectedRoute =
+    ["POST", "PUT", "DELETE"].includes(req.method) &&
+    req.path.startsWith("/projects");
+
+  // אפשר גישה עם API Key רק עבור GET
+  if (!isProtectedRoute && apiKey === SECRET_API_TOKEN) {
     return next();
   }
 
-  const authHeader = req.headers.authorization;
   if (authHeader?.startsWith("Bearer ")) {
     const token = authHeader.split(" ")[1];
     try {
@@ -44,6 +47,7 @@ export const requireAuth = async (
       }
     } catch (error) {
       console.error("שגיאה בפענוח טוקן:", error);
+      return res.status(401).json({ message: "Invalid or expired token." });
     }
   }
 
