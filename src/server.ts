@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config();
 
 import express from "express";
@@ -26,9 +26,9 @@ if (!MONGODB_URI) {
 // Middleware
 app.use(
   cors({
-    origin: ["https://re-backend.xyz", "https://api.re-backend.xyz"],
+    origin: ["https://re-backend.xyz"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: ["Content-Type", "Authorization", "x-api-key"],
   })
 );
 app.use(bodyParser.json());
