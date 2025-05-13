@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
@@ -8,8 +11,8 @@ import leadRoutes from "./routes/leads";
 import fs from "fs"; // מודול לעבודה עם מערכת הקבצים
 import https from "https"; // מודול Node.js עבור HTTPS
 
-const dotenv = require("dotenv");
-dotenv.config();
+console.log("SECRET_API_TOKEN:", process.env.SECRET_API_TOKEN); // בדוק כאן
+console.log("JWT_SECRET:", process.env.JWT_SECRET); // בדוק גם אותו
 
 const app = express();
 const MONGODB_URI = process.env.MONGODB_URI;
