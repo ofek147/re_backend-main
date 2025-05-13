@@ -1,9 +1,9 @@
 import { Router } from "express";
 import {
-  createLead,
-  deleteLead,
   getAllLeads,
+  createLead,
   updateLead,
+  deleteLead,
 } from "../controllers/leads";
 import { requireAuth } from "../middleware/auth";
 
