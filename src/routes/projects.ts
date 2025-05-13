@@ -8,6 +8,8 @@ import {
 } from "../controllers/projects";
 import { requireAuth } from "../middleware/auth";
 
+console.log("קובץ routes/projects.ts נטען");
+
 const router = Router();
 
 router.get("/projects", requireAuth, getAllProjects);

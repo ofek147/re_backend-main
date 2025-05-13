@@ -44,6 +44,7 @@ mongoose
   });
 
 // Routes
+console.log("טוען את projectRoutes...");
 app.use(projectRoutes);
 app.use(adminRoutes);
 app.use(leadRoutes);
