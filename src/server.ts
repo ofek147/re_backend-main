@@ -11,9 +11,6 @@ import leadRoutes from "./routes/leads";
 import fs from "fs"; // מודול לעבודה עם מערכת הקבצים
 import https from "https"; // מודול Node.js עבור HTTPS
 
-console.log("SECRET_API_TOKEN:", process.env.SECRET_API_TOKEN); // בדוק כאן
-console.log("JWT_SECRET:", process.env.JWT_SECRET); // בדוק גם אותו
-
 const app = express();
 const MONGODB_URI = process.env.MONGODB_URI;
 
@@ -47,7 +44,6 @@ mongoose
   });
 
 // Routes
-console.log("טוען את projectRoutes...");
 app.use(projectRoutes);
 app.use(adminRoutes);
 app.use(leadRoutes);

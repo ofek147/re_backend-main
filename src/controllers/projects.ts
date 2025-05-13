@@ -3,7 +3,6 @@ import Project from "../models/Project";
 
 // GET /projects
 export const getAllProjects = async (_req: Request, res: Response) => {
-  console.log("נכנס לפונקציה getAllProjects"); // הוסף את הלוג הזה
 
   try {
     const projects = await Project.find();
