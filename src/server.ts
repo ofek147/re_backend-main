@@ -26,7 +26,7 @@ if (!MONGODB_URI) {
 // Middleware
 app.use(
   cors({
-    origin: ["https://re-backend.xyz"],
+    origin: ["https://re-backend.xyz", "http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "x-api-key"],
   })
