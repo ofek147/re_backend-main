@@ -24,15 +24,15 @@ if (!MONGODB_URI) {
 }
 
 // Middleware
-app.use(
-  cors({
-    origin: ["https://re-backend.xyz", "http://localhost:3000", "http://localhost:5173"],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization", "x-api-key"],
-  })
-);
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(
+//   cors({
+//     origin: ["https://re-backend.xyz", "http://localhost:3000", "http://localhost:5173"],
+//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//     allowedHeaders: ["Content-Type", "Authorization", "x-api-key"],
+//   })
+// );
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB
 mongoose
