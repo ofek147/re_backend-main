@@ -27,7 +27,7 @@ if (!MONGODB_URI) {
 app.use(
   cors({
     origin: ["https://re-backend.xyz", "http://localhost:3000", "http://localhost:5173"],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization", "x-api-key"],
   })
 );
