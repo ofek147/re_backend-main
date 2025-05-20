@@ -16,7 +16,7 @@ export interface IProject extends Document {
   image: string;
   time_frame: string;
   progress: number;
-  status: string;
+  status: number;
   name: string;
   under_name: string;
   title: string;
@@ -52,8 +52,10 @@ const ProjectSchema = new Schema<IProject>(
       default: 0,
     },
     status: {
-      type: String,
-      trim: true,
+      type: Number,
+      min: 1,
+      max: 7,
+      default: 1,
     },
     name: {
       type: String,
